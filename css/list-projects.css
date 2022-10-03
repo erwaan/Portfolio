@@ -58,7 +58,7 @@
 	/* opacity: 1; */
 	-webkit-transition: .3s ease-in-out;
 	transition: .3s ease-in-out;
-    filter: brightness(40%)
+    filter: brightness(50%)
 }
 .image-gallery :hover img {
 	/* opacity: 0.7; */
@@ -69,8 +69,8 @@
 }
 .image-gallery :hover div {
 	color: rgb(239, 239, 239);
-    -webkit-transition: .3s ease-in-out;
-	transition: .3s ease-in-out;
+    -webkit-transition: .13s ease-in-out;
+	transition: 1s ease-in-out;
 }
 
 

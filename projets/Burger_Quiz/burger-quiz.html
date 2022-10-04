@@ -4,10 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>NOM DU PROJET</title>
+    <title>Burger Quiz</title>
     <meta name="description" content="Case study page of Project" />
 
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="../../css/style.css" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -22,12 +22,14 @@
           <div class="header__logo-container">
             <div class="header__logo-img-cont">
               <img
-                src="./assets/png/profile-pict.jpg"
-                alt="Ram Maheshwari Logo Image"
+                src="../../assets/png/profile-pict.jpg"
+                alt=""
                 class="header__logo-img"
               />
             </div>
-            <span class="header__logo-sub">Erwaan</span>
+            <a href="../../index.html">
+                <span class="header__logo-sub">Erwaan</span>
+            </a>
           </div>
           <div class="header__main">
             <ul class="header__links">
@@ -48,12 +50,12 @@
             </ul>
             <div class="header__main-ham-menu-cont">
               <img
-                src="./assets/svg/ham-menu.svg"
+                src="../../assets/svg/ham-menu.svg"
                 alt="hamburger menu"
                 class="header__main-ham-menu"
               />
               <img
-                src="./assets/svg/ham-menu-close.svg"
+                src="../../assets/svg/ham-menu-close.svg"
                 alt="hamburger menu close"
                 class="header__main-ham-menu-close d-none"
               />
@@ -81,13 +83,16 @@
             </ul>
           </div>
         </div>
-      </header>
+    </header>
+
+
+    <!-- DÉTAILS DU PROJET -->
     <section class="project-cs-hero">
       <div class="project-cs-hero__content">
-        <h1 class="heading-primary">NOM DU PROJET</h1>
+        <h1 class="heading-primary">Burger Quiz</h1>
         <div class="project-cs-hero__info">
           <p class="text-primary">
-            Synopsis du projet
+          Jouez chez vous à des parties entièrement personnalisables du célèbre jeu d'Alain Chabat comme si vous étiez sur le vrai plateau.
           </p>
         </div>
         <div class="project-cs-hero__cta">
@@ -100,46 +105,52 @@
         <div class="project-details__content">
           <div class="project-details__showcase-img-cont">
             <img
-              src="./assets/jpeg/project-mockup-example.jpeg"
+              src="./images/bq_mayo.jpg"
               alt="Project Image"
               class="project-details__showcase-img"
             />
           </div>
           <div class="project-details__content-main">
             <div class="project-details__desc">
-              <h3 class="project-details__content-title">Project Overview</h3>
+              <h3 class="project-details__content-title">Le projet</h3>
               <p class="project-details__desc-para">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                alias tenetur minus quaerat aliquid, aut provident blanditiis,
-                deleniti aspernatur ipsam eaque veniam voluptatem corporis vitae
-                mollitia laborum corrupti ullam rem. Lorem ipsum dolor sit amet
-                consectetur adipisicing elit. Neque alias tenetur minus quaerat
-                aliquid, aut provident blanditiis, deleniti aspernatur ipsam
-                eaque veniam voluptatem corporis vitae mollitia laborum corrupti
-                ullam rem?
+                L'objectif de ce projet est de recréer entièrement le plateau et la régie du je uBurger Quiz. 
+                L'animateur possède une tablette qui fait office de télécommande et lui permet de contrôler l'ensemble des écrans du plateau.
+                À savoir les deux écrans indiquand les miams des équipes Ketchup et Mayo, ainsi que l'écran principal qui affiche les jingles, les questions, etc.
               </p>
+              <br>
+              <h3 class="project-details__content-title">Comment ça marche ?</h3>
               <p class="project-details__desc-para">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Neque
-                alias tenetur minus quaerat aliquid, aut provident blanditiis,
-                deleniti aspernatur ipsam eaque veniam voluptatem corporis vitae
-                mollitia laborum corrupti ullam rem?
+                L'animateur doit d'abord compléter un fichier excel pré-rempli pour y inscrire toutes les questions qu'il a préparées.
+                Il suffit ensuite d'exporter ces données en format CSV qu'on intègre dans les fichiers de l'application et la partie peut commencer !
+              </p>
+              <br>
+              <h3 class="project-details__content-title">Et les cheese-buzzers dans tout ça ?</h3>
+              <p class="project-details__desc-para">
+                Chaque joueur est relié à un fil conducteur, lui même lié à une carte électronique pré-programmée appelée Makey-Makey. 
+                Grâce à cette astuce, les joueurs deviennet eux même les buzzers. 
+                Il faut alors frapper un des ses voisin de table pour fermer le circuit électrique de son équipe et déclencher le buzzer sur l'écran principal.
+              </p>
+              <br>
+              <h3 class="project-details__content-title">Un exemple d'émission</h3>
+              <p class="project-details__desc-para">
+                Chaque joueur est relié à un fil conducteur, lui même lié à une carte électronique pré-programmée appelée Makey-Makey. 
+                Grâce à cette astuce, les joueurs deviennet eux même les buzzers. 
+                Il faut alors frapper un des ses voisin de table pour fermer le circuit électrique de son équipe et déclencher le buzzer sur l'écran principal.
               </p>
             </div>
             <div class="project-details__tools-used">
-              <h3 class="project-details__content-title">Tools Used</h3>
+              <h3 class="project-details__content-title">Outils et compétences utilisées</h3>
               <div class="skills">
+                <div class="skills__skill">Python</div>
+                <div class="skills__skill">Flask</div>
+                <div class="skills__skill">SQLAlchemy</div>
                 <div class="skills__skill">HTML</div>
                 <div class="skills__skill">CSS</div>
                 <div class="skills__skill">JavaScript</div>
-                <div class="skills__skill">React</div>
-                <div class="skills__skill">SASS</div>
-                <div class="skills__skill">GIT</div>
-                <div class="skills__skill">Shopify</div>
-                <div class="skills__skill">Wordpress</div>
-                <div class="skills__skill">Google ADS</div>
-                <div class="skills__skill">Facebook Ads</div>
-                <div class="skills__skill">Android</div>
-                <div class="skills__skill">IOS</div>
+                <div class="skills__skill">JQuery</div>
+                <div class="skills__skill">Photoshop</div>
+                <div class="skills__skill">Makey Makey</div>
               </div>
             </div>
             <div class="project-details__links">
@@ -161,6 +172,8 @@
         </div>
       </div>
     </section>
+    <!-- DÉTAILS DU PROJET -->
+
     <footer class="main-footer">
       <div class="main-container">
         <div class="main-footer__upper">

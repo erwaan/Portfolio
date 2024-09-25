@@ -34,6 +34,7 @@
 
     <div class="container">
         <h2>Entrez le code</h2>
+        <p style="color: black">Le code est 1234</p>
         <form id="codeForm" onsubmit="return validateCode()">
             <input type="text" id="codeInput" placeholder="Entrez le code ici">
             <br>
@@ -43,7 +44,7 @@
 
     <script>
         // Hachage SHA-256 du code correct (par exemple "1234") pré-généré
-        const correctHash = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4d098d9e501c68f3e65"; // SHA-256 pour "1234"
+        const correctHash = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4459e13f978d7c846f4"; // SHA-256 pour "1234"
 
         function validateCode() {
             var code = document.getElementById("codeInput").value;

@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Code Validation</title>
+    <title>Code Validation avec Hachage</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js"></script>
     <style>
         body {
             background-color: black;
@@ -41,9 +42,17 @@
     </div>
 
     <script>
+        // Hachage SHA-256 du code correct (par exemple "1234") pré-généré
+        const correctHash = "03ac674216f3e15c761ee1a5e255f067953623c8b388b4d098d9e501c68f3e65"; // SHA-256 pour "1234"
+
         function validateCode() {
             var code = document.getElementById("codeInput").value;
-            if (code === "1234") {
+
+            // Générer le hachage SHA-256 du code entré
+            var hash = CryptoJS.SHA256(code).toString();
+
+            // Comparer le hachage entré avec le hachage correct
+            if (hash === correctHash) {
                 window.location.href = "success.html"; // Rediriger vers la page de succès
             } else {
                 alert("Code incorrect, veuillez réessayer.");

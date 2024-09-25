@@ -50,6 +50,7 @@
 
             // Générer le hachage SHA-256 du code entré
             var hash = CryptoJS.SHA256(code).toString();
+            console.log(hash);
 
             // Comparer le hachage entré avec le hachage correct
             if (hash === correctHash) {

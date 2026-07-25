@@ -1,355 +1,297 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Erwaan</title>
-    <meta name="description" content="Portfolio de Erwan Boisard" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Erwaan — Portfolio</title>
+  <meta name="description" content="Portfolio d'Erwan Boisard (erwaan), créateur d'expériences numériques : web, événementiel, vidéo mapping et bidouilles en tout genre." />
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/list-projects.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicon/favicon-16x16.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header">
-      <div class="header__content">
-        <div class="header__logo-container">
-          <div class="header__logo-img-cont">
-            <img
-              src="./assets/png/profile-pict.jpg"
-              alt="Ram Maheshwari Logo Image"
-              class="header__logo-img"
-            />
-          </div>
-          <span class="header__logo-sub">Erwaan</span>
-        </div>
-        <div class="header__main">
-          <ul class="header__links">
-            <li class="header__link-wrapper">
-              <a href="./index.html" class="header__link"> Accueil </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#about" class="header__link">Présentation </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#projects" class="header__link">
-                Mes projets
-              </a>
-            </li>
-            <li class="header__link-wrapper">
-              <a href="./index.html#contact" class="header__link"> Contact </a>
-            </li>
-          </ul>
-          <div class="header__main-ham-menu-cont">
-            <img
-              src="./assets/svg/ham-menu.svg"
-              alt="hamburger menu"
-              class="header__main-ham-menu"
-            />
-            <img
-              src="./assets/svg/ham-menu-close.svg"
-              alt="hamburger menu close"
-              class="header__main-ham-menu-close d-none"
-            />
-          </div>
-        </div>
-      </div>
-      <div class="header__sm-menu">
-        <div class="header__sm-menu-content">
-          <ul class="header__sm-menu-links">
-            <li class="header__sm-menu-link">
-              <a href="./index.html"> Accueil </a>
-            </li>
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
 
-            <li class="header__sm-menu-link">
-              <a href="./index.html#about"> Présentation </a>
-            </li>
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-            <li class="header__sm-menu-link">
-              <a href="./index.html#projects"> Mes projets </a>
-            </li>
+  <header class="site-header" id="site-header">
+    <div class="wrap site-header__inner">
+      <a href="#top" class="logo" aria-label="Retour en haut">
+        <span class="logo__bracket">&lt;</span>erwaan<span class="logo__bracket">/&gt;</span>
+      </a>
 
-            <li class="header__sm-menu-link">
-              <a href="./index.html#contact"> Contact </a>
-            </li>
-          </ul>
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="#about" class="nav__link">Profil</a></li>
+          <li><a href="#skills" class="nav__link">Compétences</a></li>
+          <li><a href="#projects" class="nav__link">Projets</a></li>
+          <li><a href="#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="wrap hero__inner">
+        <p class="hero__eyebrow" aria-hidden="true">// portfolio.init()</p>
+        <h1 class="hero__title">
+          Salut, je suis <span class="text-gradient">Erwan</span><br />
+          alias <span class="hero__handle">erwaan</span>_<span class="cursor-blink" aria-hidden="true">&nbsp;</span>
+        </h1>
+        <p class="hero__tagline" id="typewriter" role="text"></p>
+        <div class="hero__cta">
+          <a href="#projects" class="btn btn--primary">Voir mes projets</a>
+          <a href="#contact" class="btn btn--ghost">Me contacter</a>
         </div>
       </div>
-    </header>
-    <section class="home-hero">
-      <div class="home-hero__content">
-        <h1 class="heading-primary">Bienvenue !</h1>
-        <div class="home-hero__info">
-          <p class="text-primary">
-            Ici <strong>erwaan</strong>, ingénieur IT mais avant tout passionné de création, d'informatique et de bidouilles en tout genre.
-          </p>
-        </div>
-        <div class="home-hero__cta">
-          <a href="./index.html#projects" class="btn btn--bg">Mes projets</a>
-        </div>
+
+      <div class="hero__socials" aria-label="Réseaux sociaux">
+        <a href="https://github.com/erwaan" target="_blank" rel="noreferrer" aria-label="GitHub" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.65.5.5 5.66.5 12.03c0 5.1 3.29 9.42 7.86 10.95.58.1.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.55-3.88-1.55-.52-1.33-1.28-1.69-1.28-1.69-1.04-.72.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.7 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.47.11-3.06 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.79 0c2.2-1.49 3.17-1.18 3.17-1.18.64 1.59.24 2.77.12 3.06.74.81 1.18 1.83 1.18 3.09 0 4.43-2.69 5.4-5.25 5.69.41.36.78 1.08.78 2.17 0 1.57-.01 2.83-.01 3.22 0 .31.2.67.8.56A10.53 10.53 0 0 0 23.5 12.03C23.5 5.66 18.35.5 12 .5Z"/></svg>
+        </a>
+        <a href="https://www.youtube.com/channel/UChoNLYFVIjC93qPW9OWNmsQ" target="_blank" rel="noreferrer" aria-label="YouTube" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23.5 6.7a3.02 3.02 0 0 0-2.12-2.14C19.5 4 12 4 12 4s-7.5 0-9.38.56A3.02 3.02 0 0 0 .5 6.7 31.6 31.6 0 0 0 0 12a31.6 31.6 0 0 0 .5 5.3 3.02 3.02 0 0 0 2.12 2.14C4.5 20 12 20 12 20s7.5 0 9.38-.56a3.02 3.02 0 0 0 2.12-2.14A31.6 31.6 0 0 0 24 12a31.6 31.6 0 0 0-.5-5.3ZM9.6 15.5v-7l6.3 3.5-6.3 3.5Z"/></svg>
+        </a>
+        <a href="https://www.instagram.com/" target="_blank" rel="noreferrer" aria-label="Instagram" class="social-icon">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.2c3.2 0 3.6 0 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.25.07 1.65.07 4.85s0 3.6-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.25.06-1.65.07-4.85.07s-3.6 0-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.72 3.72 0 0 1-1.38-.9 3.72 3.72 0 0 1-.9-1.38c-.16-.42-.36-1.06-.41-2.23C2.2 15.6 2.2 15.2 2.2 12s0-3.6.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41C8.4 2.2 8.8 2.2 12 2.2Zm0 2c-3.15 0-3.52 0-4.76.07-.97.04-1.5.2-1.85.34-.46.18-.79.4-1.14.75-.35.35-.56.68-.75 1.14-.14.35-.3.88-.34 1.85C3.1 9.35 3.1 9.7 3.1 12.85s0 3.5.07 4.76c.04.97.2 1.5.34 1.85.18.46.4.79.75 1.14.35.35.68.56 1.14.75.35.14.88.3 1.85.34C8.48 21.9 8.85 21.9 12 21.9s3.52 0 4.76-.07c.97-.04 1.5-.2 1.85-.34.46-.18.79-.4 1.14-.75.35-.35.56-.68.75-1.14.14-.35.3-.88.34-1.85.06-1.24.07-1.61.07-4.76s0-3.5-.07-4.76c-.04-.97-.2-1.5-.34-1.85a2.98 2.98 0 0 0-.75-1.14 2.98 2.98 0 0 0-1.14-.75c-.35-.14-.88-.3-1.85-.34C15.52 4.2 15.15 4.2 12 4.2Zm0 3.4a4.4 4.4 0 1 1 0 8.8 4.4 4.4 0 0 1 0-8.8Zm0 1.9a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5Zm4.6-2.1a1.03 1.03 0 1 1 0 2.06 1.03 1.03 0 0 1 0-2.06Z"/></svg>
+        </a>
       </div>
-      <div class="home-hero__socials">
-        <div class="home-hero__social">
-          <a href="https://github.com/erwaan" class="home-hero__social-icon-link">
-            <img
-              src="./assets/png/github-ico.png"
-              alt="icon"
-              class="home-hero__social-icon"
-            />
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a href="https://www.youtube.com/channel/UChoNLYFVIjC93qPW9OWNmsQ" class="home-hero__social-icon-link">
-            <img
-              src="./assets/png/yt-ico.png"
-              alt="icon"
-              class="home-hero__social-icon"
-            />
-          </a>
-        </div>
-        <div class="home-hero__social">
-          <a
-            href=""
-            class="home-hero__social-icon-link home-hero__social-icon-link--bd-none"
-          >
-            <img
-              src="./assets/png/insta-ico.png"
-              alt="icon"
-              class="home-hero__social-icon"
-            />
-          </a>
-        </div>
-      </div>
-      <div class="home-hero__mouse-scroll-cont">
-        <div class="mouse"></div>
-      </div>
-    </section>
-    <section id="about" class="about sec-pad">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main">Présentation</span>
-          <span class="heading-sec__sub">
-            <!-- lorem -->
-          </span>
-        </h2>
-        <div class="about__content">
-          <div class="about__content-main">
-            <h3 class="about__content-title">Qui suis-je ?</h3>
-            <div class="about__content-details">
-              <p class="about__content-details-para">
-                Hello ! Je suis
-                <strong>Erwan Boisard</strong> (alias <strong>erwaan</strong>)
-                et je suis <strong>auto-entrepreneur</strong> en divertissement et arts numériques.
-                J'ai souvent des idées de projets plus ou moins farfelues, et comme
-                j'adore créer et apprendre, alors je passe mon temps à les réaliser.
-                Parfois, ça donne des choses bien, alors je les présente ici 
-                pour les partager et vous les faire découvrir.                
-              </p>
-            </div>
-            <a href="./index.html#contact" class="btn btn--med btn--theme dynamicBgClr"
-              >Contact</a
-            >
-          </div>
-          <!-- <div class="about__content-skills">
-            <h3 class="about__content-title">Mes compétences</h3>
-            <div class="skills">
-              <div class="skills__skill">HTML</div>
-              <div class="skills__skill">CSS</div>
-              <div class="skills__skill">JavaScript</div>
-              <div class="skills__skill">Facebook Ads</div>
-              <div class="skills__skill">Android</div>
-              <div class="skills__skill">Python</div>
-              <div class="skills__skill">Java</div>
-            </div>
-          </div> -->
-        </div>
-      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Défiler vers le bas">
+        <span class="scroll-cue__mouse"><span></span></span>
+      </a>
     </section>
 
-    <section id="projects" class="projects sec-pad">
+    <section id="about" class="section about">
+      <div class="wrap">
+        <p class="section-kicker">01 — Profil</p>
+        <h2 class="section-title">Qui suis-je ?</h2>
 
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-bg">
-          <span class="heading-sec__main">Mes projets</span>
-          <span class="heading-sec__sub">
-            Vous trouverez ici un aperçu de mes derniers projets réalisés.
-          </span>
-        </h2>
-
-        <div class="projects__content">
-          <div class="main-container">
-            <!-- heading text -->
-            <ul class="image-gallery">
-              <!-- <li>
-                <a href="./projets/Photobooth/photobooth.html">
-                  <img src="./projets/Photobooth/Photobooth/1egg.JPG" alt=""/>
-                  <div class="centered">Photobooth</div>
-                </a>
-              </li> -->
-              <!-- <li>
-                <a href="./projets/Dobble/dobble.html">
-                  <img src="./projets/Dobble/images/card.jpg" alt=""/>
-                  <div class="centered">Jeu Dobble personnalisé</div>
-                </a> -->
-              </li>
-              <li>
-                <a href="./projets/Escape_Game_Sequestres/escape-game-sequesqres.html">
-                  <img src="./projets/Escape_Game_Sequestres/images/1egg.JPG" alt=""/>
-                  <div class="centered">Escape Game <br>"Séquestrés"</div>
-                </a>
-              </li>
-              <li>
-                <a href="./projets/BarWan/barwan.html">
-                  <img src="./projets/BarWan/images/main_barwan.jpg" alt=""/>
-                  <div class="centered">BarWan</div>
-                </a>
-              </li>
-              <li>
-                <a href="./projets/Burger_Quiz/burger-quiz.html">
-                  <img src="./projets/Burger_Quiz/images/bq_bleu.jpg" alt=""/>
-                  <div class="centered">Burger Quiz</div>
-                </a>
-              </li>
-              <li>
-                <a href="./projets/Relecq_Kaching/relecq-kaching.html">
-                  <img src="./projets/Relecq_Kaching/images/main_rkaching.jpg" alt=""/>
-                  <div class="centered">Relecq K'aching</div>
-                </a>
-              </li>
-              <li>
-                <a href="./projets/HeavyM_Contest/heavym-contest.html">
-                  <img src="./projets/HeavyM_Contest/images/main_heavym.jpg" alt=""/>
-                  <div class="centered">HeavyM Contest<br>1 & 2</div>
-                </a>
-              </li>
-              <!-- <li>
-                <a href="./projets/Green_Detective/green-detective.html">
-                  <img src="./projets/Green_Detective/images/main_heavym.jpg" alt=""/>
-                  <div class="centered">Green Detective</div>
-                </a>
-              </li> -->
-              <li>
-                <a href="./projets/Summer_Mix_Party/summer-mix-party.html">
-                  <img src="./projets/Summer_Mix_Party/images/main_summer.jpg" alt=""/>
-                  <div class="centered">Summer Mix Party</div>
-                </a>
-              </li>
-              
-              <!-- Ajouter mes autres projets ici -->
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="contact" class="contact sec-pad dynamicBg">
-      <div class="main-container">
-        <h2 class="heading heading-sec heading-sec__mb-med">
-          <span class="heading-sec__main heading-sec__main--lt">Contact</span>
-          <span class="heading-sec__sub heading-sec__sub--lt">
-            Une question, des demandes, idées, besoin d'aide ou juste une envie discuter... <br> Pour me contacter, c'est par ici !
-          </span>
-        </h2>
-        <div class="contact__form-container">
-          <form action="https://formspree.io/f/mwkzqnrd" method="POST" class="contact__form">
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="name">Nom Prénom</label>
-              <input
-                required
-                placeholder="Entrez votre nom et prénom"
-                type="text"
-                class="contact__form-input"
-                name="name"
-                id="name"
-              />
+        <div class="about__grid">
+          <div class="about__portrait">
+            <div class="about__portrait-frame">
+              <img src="./assets/img/profile.jpg" alt="Portrait d'Erwan Boisard" loading="lazy" />
             </div>
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="email">Email</label>
-              <input
-                required
-                placeholder="Entrez votre email"
-                type="text"
-                class="contact__form-input"
-                name="email"
-                id="email"
-              />
-            </div>
-            <div class="contact__form-field">
-              <label class="contact__form-label" for="message">Message</label>
-              <textarea
-                required
-                cols="30"
-                rows="10"
-                class="contact__form-input"
-                placeholder="Écrivez votre message ici..."
-                name="message"
-                id="message"
-              ></textarea>
-            </div>
-            <button type="submit" class="btn btn--theme contact__btn">
-              Envoyer
-            </button>
-          </form>
-        </div>
-      </div>
-    </section>
-    <footer class="main-footer">
-      <div class="main-container">
-        <div class="main-footer__upper">
-          <div class="main-footer__row main-footer__row-1">
-            <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
-            </h2>
-            <div class="main-footer__social-cont">
-              <a target="_blank" rel="noreferrer" href="https://github.com/erwaan">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/github-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UChoNLYFVIjC93qPW9OWNmsQ">
-                <img
-                  class="main-footer__icon"
-                  src="./assets/png/yt-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="">
-                <img
-                  class="main-footer__icon main-footer__icon--mr-none"
-                  src="./assets/png/insta-ico.png"
-                  alt="icon"
-                />
-              </a>
+            <div class="about__portrait-tag">
+              <span class="dot dot--live" aria-hidden="true"></span> dispo pour de nouveaux projets
             </div>
           </div>
-          <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt">Erwan Boisard</h4>
-            <p class="main-footer__short-desc">
-              Divertissement & Arts Numériques<br>
+
+          <div class="about__content">
+            <p class="about__text">
+              Hello ! Je suis <strong>Erwan Boisard</strong>, alias <strong>erwaan</strong>,
+              ingénieur IT et <strong>auto-entrepreneur en divertissement &amp; arts numériques</strong>.
             </p>
+            <p class="about__text">
+              J'ai souvent des idées de projets plus ou moins farfelues — et comme j'adore
+              créer et apprendre, je passe mon temps à les concrétiser. Web, événementiel,
+              vidéo mapping, électronique... j'aime toucher à tout ce qui me permet de mêler
+              technique et créativité. Parfois ça donne des choses sympas, alors je les
+              présente ici pour les partager.
+            </p>
+            <div class="about__stats">
+              <div class="stat">
+                <span class="stat__num">6+</span>
+                <span class="stat__label">projets présentés</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num">∞</span>
+                <span class="stat__label">idées farfelues</span>
+              </div>
+              <div class="stat">
+                <span class="stat__num">1</span>
+                <span class="stat__label">passion : créer</span>
+              </div>
+            </div>
+            <a href="#contact" class="btn btn--primary">Discutons de votre projet</a>
           </div>
         </div>
+      </div>
+    </section>
 
-        <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
-        <div class="main-footer__lower">
-          &copy; Copyright 2021. Made by
-          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com">Ram Maheshwari</a> and adapted by 
-          <a rel="noreferrer" target="_blank" href="./index.html#about">me</a>.
+    <section id="skills" class="section skills">
+      <div class="wrap">
+        <p class="section-kicker">02 — Compétences</p>
+        <h2 class="section-title">Ma boîte à outils</h2>
+        <p class="section-lead">
+          Un mélange de code, de création visuelle et de bidouilles techniques.
+        </p>
+
+        <div class="skills__grid">
+          <div class="skill-card">
+            <span class="skill-card__icon" aria-hidden="true">&lt;/&gt;</span>
+            <h3>Web</h3>
+            <p>HTML, CSS, JavaScript</p>
+          </div>
+          <div class="skill-card">
+            <span class="skill-card__icon" aria-hidden="true">{ }</span>
+            <h3>Développement</h3>
+            <p>Python, Java, Android</p>
+          </div>
+          <div class="skill-card">
+            <span class="skill-card__icon" aria-hidden="true">✷</span>
+            <h3>Vidéo mapping</h3>
+            <p>HeavyM, scénographie lumière</p>
+          </div>
+          <div class="skill-card">
+            <span class="skill-card__icon" aria-hidden="true">⚙</span>
+            <h3>Bidouilles</h3>
+            <p>Électronique, automatisation</p>
+          </div>
+          <div class="skill-card">
+            <span class="skill-card__icon" aria-hidden="true">▣</span>
+            <h3>Événementiel</h3>
+            <p>Conception & animation d'events</p>
+          </div>
+          <div class="skill-card">
+            <span class="skill-card__icon" aria-hidden="true">▲</span>
+            <h3>Growth</h3>
+            <p>Facebook Ads, communication</p>
+          </div>
         </div>
       </div>
-    </footer>
+    </section>
 
-    <script src="../../index.js"></script>
-  </body>
+    <section id="projects" class="section projects">
+      <div class="wrap">
+        <p class="section-kicker">03 — Projets</p>
+        <h2 class="section-title">Ce que j'ai créé</h2>
+        <p class="section-lead">
+          Un aperçu de mes dernières réalisations, entre événementiel, jeux et créations numériques.
+        </p>
+
+        <div class="projects__grid">
+          <a class="project-card" href="./projets/Escape_Game_Sequestres/escape-game-sequesqres.html">
+            <div class="project-card__media">
+              <img src="./assets/img/projects/escape-game.jpg" alt="Escape Game Séquestrés" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Escape Game <span>« Séquestrés »</span></h3>
+              <p class="project-card__desc">Conception d'un escape game événementiel de A à Z.</p>
+              <span class="project-card__link">Découvrir <i aria-hidden="true">→</i></span>
+            </div>
+          </a>
+
+          <a class="project-card" href="./projets/BarWan/barwan.html">
+            <div class="project-card__media">
+              <img src="./assets/img/projects/barwan.jpg" alt="BarWan" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">BarWan</h3>
+              <p class="project-card__desc">Un bar éphémère pensé et animé pour l'occasion.</p>
+              <span class="project-card__link">Découvrir <i aria-hidden="true">→</i></span>
+            </div>
+          </a>
+
+          <a class="project-card" href="./projets/Burger_Quiz/burger-quiz.html">
+            <div class="project-card__media">
+              <img src="./assets/img/projects/burger-quiz.jpg" alt="Burger Quiz" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Burger Quiz</h3>
+              <p class="project-card__desc">Adaptation ludique et interactive du jeu télévisé.</p>
+              <span class="project-card__link">Découvrir <i aria-hidden="true">→</i></span>
+            </div>
+          </a>
+
+          <a class="project-card" href="./projets/Relecq_Kaching/relecq-kaching.html">
+            <div class="project-card__media">
+              <img src="./assets/img/projects/relecq-kaching.jpg" alt="Relecq K'aching" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Relecq K'aching</h3>
+              <p class="project-card__desc">Événement local mêlant animation et jeu de piste.</p>
+              <span class="project-card__link">Découvrir <i aria-hidden="true">→</i></span>
+            </div>
+          </a>
+
+          <a class="project-card" href="./projets/HeavyM_Contest/heavym-contest.html">
+            <div class="project-card__media">
+              <img src="./assets/img/projects/heavym-contest.jpg" alt="HeavyM Contest 1 & 2" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">HeavyM Contest <span>1 &amp; 2</span></h3>
+              <p class="project-card__desc">Participations au concours international de vidéo mapping.</p>
+              <span class="project-card__link">Découvrir <i aria-hidden="true">→</i></span>
+            </div>
+          </a>
+
+          <a class="project-card" href="./projets/Summer_Mix_Party/summer-mix-party.html">
+            <div class="project-card__media">
+              <img src="./assets/img/projects/summer-mix-party.jpg" alt="Summer Mix Party" loading="lazy" />
+            </div>
+            <div class="project-card__body">
+              <h3 class="project-card__title">Summer Mix Party</h3>
+              <p class="project-card__desc">Soirée événementielle, ambiance et mise en scène estivale.</p>
+              <span class="project-card__link">Découvrir <i aria-hidden="true">→</i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section contact">
+      <div class="wrap">
+        <p class="section-kicker">04 — Contact</p>
+        <h2 class="section-title">Discutons de votre projet</h2>
+        <p class="section-lead">
+          Une question, une idée, une envie de collaborer ? Écrivez-moi, je réponds toujours.
+        </p>
+
+        <div class="contact__grid">
+          <form class="contact__form" action="https://formspree.io/f/mwkzqnrd" method="POST" novalidate>
+            <div class="field">
+              <label for="name">Nom Prénom</label>
+              <input id="name" name="name" type="text" placeholder="Jean Dupont" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="jean@exemple.com" required />
+            </div>
+            <div class="field">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="6" placeholder="Parlez-moi de votre projet..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--block">
+              <span class="btn__label">Envoyer le message</span>
+            </button>
+            <p class="contact__status" id="form-status" role="status" aria-live="polite"></p>
+          </form>
+
+          <div class="contact__side">
+            <div class="contact__card">
+              <h3>erwaan</h3>
+              <p>Divertissement &amp; Arts Numériques</p>
+              <ul class="contact__links">
+                <li><a href="https://github.com/erwaan" target="_blank" rel="noreferrer">GitHub ↗</a></li>
+                <li><a href="https://www.youtube.com/channel/UChoNLYFVIjC93qPW9OWNmsQ" target="_blank" rel="noreferrer">YouTube ↗</a></li>
+                <li><a href="https://www.instagram.com/" target="_blank" rel="noreferrer">Instagram ↗</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <a href="#top" class="logo logo--sm">
+        <span class="logo__bracket">&lt;</span>erwaan<span class="logo__bracket">/&gt;</span>
+      </a>
+      <p class="site-footer__copy">&copy; <span id="year"></span> Erwan Boisard. Fait main, sans framework.</p>
+      <a href="#top" class="back-to-top" aria-label="Retour en haut">↑</a>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
 </html>

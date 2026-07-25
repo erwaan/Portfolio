@@ -1,238 +1,127 @@
 <!DOCTYPE html>
 <html lang="fr">
-  <head>
-    <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon/favicon-16x16.png">
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Escape Game "Séquestrés"</title>
-    <meta name="description" content="Case study page of Project" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Escape Game « Séquestrés » — erwaan</title>
+  <meta name="description" content="Conception et animation d'un escape game d'horreur événementiel dans une maison entière, par Erwan Boisard." />
 
-    <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon/favicon-16x16.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700;900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <header class="header">
-        <div class="header__content">
-          <div class="header__logo-container">
-            <div class="header__logo-img-cont">
-              <img
-                src="../../assets/png/profile-pict.jpg"
-                alt=""
-                class="header__logo-img"
-              />
-            </div>
-            <a href="/">
-                <span class="header__logo-sub">Erwaan</span>
-            </a>
-          </div>
-          <div class="header__main">
-            <ul class="header__links">
-              <li class="header__link-wrapper">
-                <a href="../../index.html" class="header__link"> Accueil </a>
-              </li>
-              <li class="header__link-wrapper">
-                <a href="../../index.html#about" class="header__link">Présentation </a>
-              </li>
-              <li class="header__link-wrapper">
-                <a href="../../index.html#projects" class="header__link">
-                  Mes projets
-                </a>
-              </li>
-              <li class="header__link-wrapper">
-                <a href="../../index.html#contact" class="header__link"> Contact </a>
-              </li>
-            </ul>
-            <div class="header__main-ham-menu-cont">
-              <img
-                src="../../assets/svg/ham-menu.svg"
-                alt="hamburger menu"
-                class="header__main-ham-menu"
-              />
-              <img
-                src="../../assets/svg/ham-menu-close.svg"
-                alt="hamburger menu close"
-                class="header__main-ham-menu-close d-none"
-              />
-            </div>
-          </div>
-        </div>
-        <div class="header__sm-menu">
-          <div class="header__sm-menu-content">
-            <ul class="header__sm-menu-links">
-              <li class="header__sm-menu-link">
-                <a href="../../index.html"> Accueil </a>
-              </li>
-  
-              <li class="header__sm-menu-link">
-                <a href="../../index.html#about"> Présentation </a>
-              </li>
-  
-              <li class="header__sm-menu-link">
-                <a href="../../index.html#projects"> Mes projets </a>
-              </li>
-  
-              <li class="header__sm-menu-link">
-                <a href="../../index.html#contact"> Contact </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-    </header>
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
 
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-    <!-- DÉTAILS DU PROJET -->
-    <section class="project-cs-hero" style="background-image: linear-gradient(#070f1bb5, #070f1bb5), url(./images/1egg.JPG);">
-      <div class="project-cs-hero__content">
-        <h1 class="heading-primary">Escape Game <br> "Séquestrés"</h1>
-        <div class="project-cs-hero__info">
-          <p class="text-primary">
+  <header class="site-header" id="site-header">
+    <div class="wrap site-header__inner">
+      <a href="../../index.html#top" class="logo" aria-label="Retour à l'accueil">
+        <span class="logo__bracket">&lt;</span>erwaan<span class="logo__bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="../../index.html#about" class="nav__link">Profil</a></li>
+          <li><a href="../../index.html#skills" class="nav__link">Compétences</a></li>
+          <li><a href="../../index.html#projects" class="nav__link">Projets</a></li>
+          <li><a href="../../index.html#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="project-hero" id="top" style="background-image: url('./images/1egg.JPG');">
+      <div class="wrap project-hero__inner">
+        <a href="../../index.html#projects" class="back-link">&larr; Retour aux projets</a>
+        <p class="project-hero__eyebrow">Événementiel</p>
+        <h1 class="project-hero__title">Escape Game <span>« Séquestrés »</span></h1>
+        <p class="project-hero__tagline">
           Un escape game d'horreur immersif et terrifiant dans une maison entière à l'atmosphère glaçante.
-          </p>
-        </div>
-        <!-- <div class="project-cs-hero__cta">
-          <a href="#" class="btn btn--bg" target="_blank">Live Link</a>
-        </div> -->
+        </p>
       </div>
     </section>
-    <section class="project-details">
-      <div class="main-container">
-        <div class="project-details__content">
-          <div class="project-details__content-main">
-            <div class="project-details__desc">
-              <h3 class="project-details__content-title"> &#x1F510; Le projet</h3>
-              <p class="project-details__desc-para">
-                Une maison en travaux et un peu d'imagination. Il n'en fallait pas plus pour qu'un ami <b>Mathieu Uguen</b> et moi, imaginons à deux 
-                un scénario d'escape game d'horreur dans ce décor glaçant. Après plusieurs heures de réflexions, nous avons créé une histoire 
-                d'environ <b>1h30</b> la plus immersive et cohérente possible. Entre réflexions, mécanismes, recherche (et peur) nous avons 
-                pu proposer cette expérience éphémère et personnalisée à nos amis répartis en trois groupes de 3 à 4 joueurs.
-              </p>
-              <br>
 
-              <h3 class="project-details__content-title"> &#x1F526; Le synopsis </h3>
-              <p class="project-details__desc-para">
-                Alors que vous pensiez aider votre ami en allant fermer la fenêtre qu'il a laissé ouverte derrière lui, vous vous retrouvez enfermés dans 
-                sa maison à l'atmosphère étrange. Pourtant banale aux premiers abords, cette maison semble de plus en plus étrange. Traces de sang au plafond, 
-                pièces secrétes, signes sataniques... Cet endroit cache quelque chose d'étrange et une chose est sûre : on vous veut du mal. Le temps presse, il 
-                faut sortir vite et avec des preuves de ce qu'il se passe ici avant qu'il ne 
-                soit trop tard. <b>Vous ne connaissez peut-être pas si bien vos amis.</b>
-              </p>
-              <br>
-
-              <div class="project-details__showcase-img-cont">
-                <img
-                  src="./images/2egg.JPG"
-                  alt="Project Image"
-                  class="project-details__showcase-img"
-                />
-              </div>
-
-              <h3 class="project-details__content-title"> &#x1F6A7; Installation </h3>
-              <p class="project-details__desc-para">
-                Pour mener à bien ce projet nous avons cartographié l'ensemble du scénario et des énigmes avec un organigramme.
-                Pour suivre les joueurs pendant leur aventure et avoir une captation vidéo, nous avions à disposition une régie son et vidéo. En tout, c'est 
-                <b>8 caméras infrarouges</b> et <b>4 dictaphones</b> qui ont été installés dans la maison. Nous avions donc une vision globale sur le déroulement de la 
-                partie dans notre régie dédiée.
-              </p>
-              <br>
-              <p class="project-details__desc-para">
-                La partie régie, captation audio et vidéo a été réalisée par <b>Erwan Uguen</b>.
-                Retrouvez-le sur son <b><a href="https://www.linkedin.com/in/erwanugn/" style="color: #0928a3;">LinkedIn</b></a>.
-              </p>
-              <br>
-              <div class="project-details__showcase-img-cont">
-                <img
-                  src="./images/egg-regie.JPG"
-                  alt="Project Image"
-                  class="project-details__showcase-img"
-                />
-              </div>
-              
-
-              <h3 class="project-details__content-title"> &#x1F3A5;	Les parties en vidéo</h3>
-              <p class="project-details__desc-para">
-                Le montage des 3 passages est en cours... 
-              <br>
-                Revenez plus tard pour voir le résultat ici !
-              </p>
-            </div>
-              <br>
-              <br>
-            <!-- <div class="project-details__tools-used">
-              <h3 class="project-details__content-title"> &#x1F527; Outils et compétences utilisées</h3>
-              <div class="skills">
-                <div class="skills__skill">Makey Makey</div>
-                <div class="skills__skill">Draw.io</div>
-              </div>
-            </div> -->
-
-
-          </div>
-          <p class="project-details__desc-para">
-            <br>
-            <br>
-            <b>Février 2023</b>
+    <section class="section project-body">
+      <div class="wrap project-layout">
+        <article class="project-main">
+          <h2 class="project-section-title">🔐 Le projet</h2>
+          <p class="project-text">
+            Une maison en travaux et un peu d'imagination. Il n'en fallait pas plus pour qu'un ami,
+            <strong>Mathieu Uguen</strong>, et moi imaginions à deux un scénario d'escape game d'horreur dans ce décor
+            glaçant. Après plusieurs heures de réflexion, nous avons créé une histoire d'environ <strong>1h30</strong>
+            la plus immersive et cohérente possible. Entre réflexions, mécanismes, recherches (et peur), nous avons pu
+            proposer cette expérience éphémère et personnalisée à nos amis répartis en trois groupes de 3 à 4 joueurs.
           </p>
-        </div>
+
+          <h2 class="project-section-title">🔮 Le synopsis</h2>
+          <p class="project-text">
+            Alors que vous pensiez aider votre ami en allant fermer la fenêtre qu'il a laissée ouverte derrière lui,
+            vous vous retrouvez enfermés dans sa maison à l'atmosphère étrange. Pourtant banale aux premiers abords,
+            cette maison semble de plus en plus étrange. Traces de sang au plafond, pièces secrètes, signes
+            sataniques... Cet endroit cache quelque chose et une chose est sûre : on vous veut du mal. Le temps
+            presse, il faut sortir vite et avec des preuves de ce qu'il se passe ici avant qu'il ne soit trop tard.
+            <strong>Vous ne connaissez peut-être pas si bien vos amis.</strong>
+          </p>
+
+          <figure class="project-figure">
+            <img src="./images/2egg.JPG" alt="Indice découvert pendant l'escape game Séquestrés" loading="lazy" />
+          </figure>
+
+          <h2 class="project-section-title">🚧 Installation</h2>
+          <p class="project-text">
+            Pour mener à bien ce projet, nous avons cartographié l'ensemble du scénario et des énigmes avec un
+            organigramme. Pour suivre les joueurs pendant leur aventure et avoir une captation vidéo, nous avions à
+            disposition une régie son et vidéo. En tout, ce sont <strong>8 caméras infrarouges</strong> et
+            <strong>4 dictaphones</strong> qui ont été installés dans la maison. Nous avions donc une vision globale
+            sur le déroulement de la partie depuis notre régie dédiée.
+          </p>
+          <p class="project-text">
+            La partie régie, captation audio et vidéo a été réalisée par <strong>Erwan Uguen</strong>. Retrouvez-le
+            sur son <a href="https://www.linkedin.com/in/erwanugn/" target="_blank" rel="noreferrer">LinkedIn</a>.
+          </p>
+
+          <figure class="project-figure">
+            <img src="./images/egg-regie.JPG" alt="Régie son et vidéo de l'escape game" loading="lazy" />
+          </figure>
+
+          <h2 class="project-section-title">🎥 Les parties en vidéo</h2>
+          <p class="project-text">
+            Le montage des 3 passages est en cours... Revenez plus tard pour voir le résultat ici !
+          </p>
+        </article>
+
+        <aside class="project-aside">
+          <div class="project-card-info">
+            <h3>Infos</h3>
+            <ul class="project-meta">
+              <li><span>Date</span><span>Février 2023</span></li>
+              <li><span>Type</span><span>Événementiel</span></li>
+            </ul>
+          </div>
+        </aside>
       </div>
     </section>
-    <!-- FIN DÉTAILS DU PROJET -->
+  </main>
 
-    <footer class="main-footer">
-      <div class="main-container">
-        <div class="main-footer__upper">
-          <div class="main-footer__row main-footer__row-1">
-            <h2 class="heading heading-sm main-footer__heading-sm">
-              <span>Social</span>
-            </h2>
-            <div class="main-footer__social-cont">
-              <a target="_blank" rel="noreferrer" href="https://github.com/erwaan">
-                <img
-                  class="main-footer__icon"
-                  src="../../assets/png/github-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="https://www.youtube.com/channel/UChoNLYFVIjC93qPW9OWNmsQ">
-                <img
-                  class="main-footer__icon"
-                  src="../../assets/png/yt-ico.png"
-                  alt="icon"
-                />
-              </a>
-              <a target="_blank" rel="noreferrer" href="">
-                <img
-                  class="main-footer__icon main-footer__icon--mr-none"
-                  src="../../assets/png/insta-ico.png"
-                  alt="icon"
-                />
-              </a>
-            </div>
-          </div>
-          <div class="main-footer__row main-footer__row-2">
-            <h4 class="heading heading-sm text-lt">Erwan Boisard</h4>
-            <p class="main-footer__short-desc">
-              Divertissement & Arts Numériques
-            </p>
-          </div>
-        </div>
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <a href="../../index.html#top" class="logo logo--sm">
+        <span class="logo__bracket">&lt;</span>erwaan<span class="logo__bracket">/&gt;</span>
+      </a>
+      <p class="site-footer__copy">&copy; <span id="year"></span> Erwan Boisard. Fait main, sans framework.</p>
+      <a href="#top" class="back-to-top" aria-label="Retour en haut">&uarr;</a>
+    </div>
+  </footer>
 
-        <!-- If you give me some credit or shoutout here by linking to my website, then it will be a big thing for me and will help me a lot :) -->
-        <div class="main-footer__lower">
-          &copy; Copyright 2021. Made by
-          <a rel="noreferrer" target="_blank" href="https://rammaheshwari.com">Ram Maheshwari</a> and adapted by 
-          <a rel="noreferrer" target="_blank" href="./index.html#about">me</a>.
-        </div>
-      </div>
-    </footer>
-    <script src="../../index.js"></script>
-  </body>
+  <script src="../../js/main.js"></script>
+</body>
 </html>

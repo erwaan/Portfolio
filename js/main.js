@@ -84,9 +84,9 @@
   const typewriterEl = document.getElementById('typewriter');
   const phrases = [
     "ingénieur IT & créateur d'expériences",
-    'passionné de vidéo mapping',
-    "bidouilleur d'idées farfelues",
-    'auto-entrepreneur en arts numériques',
+    'divertissement et arts numériques',
+    "passionné d'expériences immersives",
+    "bidouilleur professionnel d'idées originales",
   ];
 
   if (typewriterEl) {

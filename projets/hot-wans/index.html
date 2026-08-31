@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hot Wans — erwaan</title>
+  <meta name="description" content="Tournage d'une émission avec régie vidéo et diffusion en direct sur réseau local." />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon/favicon-16x16.png">
+
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header" id="site-header">
+    <div class="wrap site-header__inner">
+      <a href="../../index.html#top" class="logo" aria-label="Retour à l'accueil">
+        <span class="logo__bracket">&lt;</span>erwaan<span class="logo__bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="../../index.html#about" class="nav__link">Profil</a></li>
+          <li><a href="../../index.html#projects" class="nav__link">Projets</a></li>
+          <li><a href="../../index.html#skills" class="nav__link">Compétences</a></li>
+          <li><a href="../../index.html#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="project-hero" id="top" style="background-image: url('./images/main_hot-wans.svg');">
+      <div class="wrap project-hero__inner">
+        <a href="../../index.html#projects" class="back-link">&larr; Retour aux projets</a>
+        <p class="project-hero__eyebrow">Événementiel &amp; Production vidéo</p>
+        <h1 class="project-hero__title">Hot Wans</h1>
+        <p class="project-hero__tagline">
+          Le tournage d'une émission maison, avec régie vidéo et diffusion en direct sur réseau local.
+        </p>
+      </div>
+    </section>
+
+    <section class="section project-body">
+      <div class="wrap project-layout">
+        <article class="project-main">
+          <h2 class="project-section-title">Le projet</h2>
+          <p class="project-text">
+            Présentation à venir : concept de l'émission, dispositif de régie et de diffusion seront détaillés ici prochainement.
+          </p>
+
+          <figure class="project-figure">
+            <img src="./images/main_hot-wans.svg" alt="Hot Wans" loading="lazy" />
+          </figure>
+        </article>
+
+        <aside class="project-aside">
+          <div class="project-card-info">
+            <h3>Infos</h3>
+            <ul class="project-meta">
+              <li><span>Date</span><span>À définir</span></li>
+              <li><span>Type</span><span>Événementiel &amp; Production vidéo</span></li>
+            </ul>
+            <h3>Outils</h3>
+            <div class="tag-list">
+              <span class="tag">À définir</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <a href="../../index.html#top" class="logo logo--sm">
+        <span class="logo__bracket">&lt;</span>erwaan<span class="logo__bracket">/&gt;</span>
+      </a>
+      <p class="site-footer__copy">&copy; <span id="year"></span> Erwan Boisard</p>
+      <a href="#top" class="back-to-top" aria-label="Retour en haut">&uarr;</a>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

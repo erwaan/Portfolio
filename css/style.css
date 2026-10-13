@@ -939,6 +939,14 @@ body::before {
   border: 0;
 }
 
+/* Vidéo verticale (YouTube Shorts) */
+.project-embed--vertical {
+  max-width: 360px;
+  margin-inline: auto;
+  padding-top: 0;
+  aspect-ratio: 9 / 16;
+}
+
 .project-aside {
   position: sticky;
   top: calc(var(--header-h) + 1.5rem);

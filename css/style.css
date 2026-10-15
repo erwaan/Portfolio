@@ -1,5 +1,5 @@
 /* ---------------------------------------------------
-   Erwan Boisard — Portfolio
+   Erwan Boisard - Portfolio
    Vanilla HTML/CSS/JS, no build step, no dependencies.
 --------------------------------------------------- */
 
@@ -715,6 +715,15 @@ body::before {
 
 .project-card__body {
   padding: 1.5rem;
+}
+
+.project-card__date {
+  display: block;
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-faint);
+  letter-spacing: 0.03em;
+  margin-bottom: 0.4rem;
 }
 
 .project-card__title {

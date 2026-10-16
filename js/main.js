@@ -156,6 +156,116 @@
     });
   }
 
+  /* ---------------- Lightbox (project images) ---------------- */
+  const lightboxImages = Array.from(document.querySelectorAll('.project-main img'));
+
+  if (lightboxImages.length) {
+    const lightbox = document.createElement('div');
+    lightbox.className = 'lightbox';
+    lightbox.setAttribute('role', 'dialog');
+    lightbox.setAttribute('aria-modal', 'true');
+    lightbox.setAttribute('aria-label', 'Visionneuse d\'images');
+    lightbox.hidden = true;
+    lightbox.innerHTML = `
+      <button class="lightbox__btn lightbox__close" type="button" aria-label="Fermer">&times;</button>
+      <button class="lightbox__btn lightbox__nav lightbox__nav--prev" type="button" aria-label="Image précédente">&lsaquo;</button>
+      <figure class="lightbox__figure">
+        <img class="lightbox__img" src="" alt="" />
+        <figcaption class="lightbox__caption"></figcaption>
+      </figure>
+      <button class="lightbox__btn lightbox__nav lightbox__nav--next" type="button" aria-label="Image suivante">&rsaquo;</button>
+    `;
+    document.body.appendChild(lightbox);
+
+    const lbImg = lightbox.querySelector('.lightbox__img');
+    const lbCaption = lightbox.querySelector('.lightbox__caption');
+    const lbClose = lightbox.querySelector('.lightbox__close');
+    const lbPrev = lightbox.querySelector('.lightbox__nav--prev');
+    const lbNext = lightbox.querySelector('.lightbox__nav--next');
+    const multiple = lightboxImages.length > 1;
+    let current = 0;
+    let lastFocused = null;
+
+    lbPrev.hidden = !multiple;
+    lbNext.hidden = !multiple;
+
+    const show = (index) => {
+      current = (index + lightboxImages.length) % lightboxImages.length;
+      const source = lightboxImages[current];
+      lbImg.src = source.currentSrc || source.src;
+      lbImg.alt = source.alt;
+      const counter = multiple ? `${current + 1} / ${lightboxImages.length}` : '';
+      lbCaption.textContent = [counter, source.alt].filter(Boolean).join(' · ');
+    };
+
+    const open = (index) => {
+      lastFocused = document.activeElement;
+      show(index);
+      lightbox.hidden = false;
+      document.body.classList.add('has-lightbox');
+      requestAnimationFrame(() => lightbox.classList.add('is-open'));
+      lbClose.focus();
+    };
+
+    const close = () => {
+      lightbox.classList.remove('is-open');
+      document.body.classList.remove('has-lightbox');
+      lightbox.hidden = true;
+      if (lastFocused) lastFocused.focus();
+    };
+
+    lightboxImages.forEach((img, index) => {
+      img.classList.add('is-zoomable');
+      img.setAttribute('tabindex', '0');
+      img.setAttribute('role', 'button');
+      img.addEventListener('click', () => open(index));
+      img.addEventListener('keydown', (event) => {
+        if (event.key === 'Enter' || event.key === ' ') {
+          event.preventDefault();
+          open(index);
+        }
+      });
+    });
+
+    lbClose.addEventListener('click', close);
+    lbPrev.addEventListener('click', () => show(current - 1));
+    lbNext.addEventListener('click', () => show(current + 1));
+
+    lightbox.addEventListener('click', (event) => {
+      if (event.target === lightbox || event.target.classList.contains('lightbox__figure')) close();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (lightbox.hidden) return;
+      if (event.key === 'Escape') close();
+      else if (event.key === 'ArrowLeft' && multiple) show(current - 1);
+      else if (event.key === 'ArrowRight' && multiple) show(current + 1);
+      else if (event.key === 'Tab') {
+        const focusables = [lbClose, lbPrev, lbNext].filter((el) => !el.hidden);
+        const first = focusables[0];
+        const last = focusables[focusables.length - 1];
+        if (event.shiftKey && document.activeElement === first) {
+          event.preventDefault();
+          last.focus();
+        } else if (!event.shiftKey && document.activeElement === last) {
+          event.preventDefault();
+          first.focus();
+        }
+      }
+    });
+
+    let touchStartX = null;
+    lightbox.addEventListener('touchstart', (event) => {
+      touchStartX = event.touches[0].clientX;
+    }, { passive: true });
+    lightbox.addEventListener('touchend', (event) => {
+      if (touchStartX === null || !multiple) return;
+      const dx = event.changedTouches[0].clientX - touchStartX;
+      if (Math.abs(dx) > 50) show(current + (dx < 0 ? 1 : -1));
+      touchStartX = null;
+    });
+  }
+
   /* ---------------- Footer year ---------------- */
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();

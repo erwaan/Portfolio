@@ -3,6 +3,14 @@
 
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  /* ---------------- Analytics (GoatCounter) ---------------- */
+  const GOATCOUNTER_CODE = 'erwanboisard'; // https://<code>.goatcounter.com
+  const goatcounter = document.createElement('script');
+  goatcounter.async = true;
+  goatcounter.src = 'https://gc.zgo.at/count.js';
+  goatcounter.dataset.goatcounter = `https://${GOATCOUNTER_CODE}.goatcounter.com/count`;
+  document.head.appendChild(goatcounter);
+
   /* ---------------- Header scroll state ---------------- */
   const header = document.getElementById('site-header');
   const onScroll = () => {

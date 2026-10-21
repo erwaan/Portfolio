@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeu de piste extérieur - Green Detective</title>
+  <meta name="description" content="Un jeu de piste en extérieur guidé par un chatbot pour découvrir la ville et les gestes durables." />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../../assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../../assets/favicon/favicon-16x16.png">
+
+  <link rel="stylesheet" href="../../css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header" id="site-header">
+    <div class="wrap site-header__inner">
+      <a href="../../index.html#top" class="logo" aria-label="Retour à l'accueil">
+        <span class="logo__bracket">&lt;</span>Erwan Boisard<span class="logo__bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="../../index.html#about" class="nav__link">Profil</a></li>
+          <li><a href="../../index.html#projects" class="nav__link">Projets</a></li>
+          <li><a href="../../index.html#skills" class="nav__link">Compétences</a></li>
+          <li><a href="../../index.html#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="project-hero" id="top" style="background-image: url('./images/thumbnail.jpg');">
+      <div class="wrap project-hero__inner">
+        <a href="../../index.html#projects" class="back-link">&larr; Retour aux projets</a>
+        <p class="project-hero__eyebrow">Événementiel &amp; Jeu grandeur nature</p>
+        <h1 class="project-hero__title">Jeu de piste extérieur <span>- Green Detective</span></h1>
+        <p class="project-hero__tagline">
+          Un jeu de piste en extérieur guidé par un chatbot pour découvrir la ville et les gestes durables.
+        </p>
+      </div>
+    </section>
+
+    <section class="section project-body">
+      <div class="wrap project-layout">
+        <article class="project-main">
+          <h2 class="project-section-title">Le projet</h2>
+          <p class="project-text">
+            Dans le cadre du festival « Ça coule de ressources », consacré à la sensibilisation aux gestes durables, la ville du Relecq-Kerhuon a fait appel à moi pour créer un jeu de piste en extérieur permettant de découvrir la ville à travers différentes énigmes. Les participants se rendaient au point de départ, à la médiathèque, pour recevoir les instructions du jeu, puis se laissaient guider en autonomie.
+          </p>
+
+          <figure class="project-figure">
+            <img src="./images/thumbnail.jpg" alt="Jeu de piste extérieur - Green Detective" loading="lazy" />
+          </figure>
+
+          <h2 class="project-section-title">Comment ça marche ?</h2>
+          <p class="project-text">
+            Les joueurs étaient guidés d'énigme en énigme par un chatbot. Il fallait se rendre à 10 points clés de la ville, puis bien observer les alentours pour résoudre les énigmes et faire avancer l'enquête. Ce chatbot automatisé faisait office de maître du jeu : il racontait l'histoire, validait les bonnes réponses pour passer à l'étape suivante et donnait des indices aux joueurs bloqués.
+          </p>
+
+          <figure class="project-figure project-figure--phone">
+            <img src="./images/Screenshot_20261021-152545.jpg" alt="Message d'accueil du chatbot Green Detective sur Messenger" loading="lazy" />
+          </figure>
+
+          <h2 class="project-section-title">Ils en parlent</h2>
+          <p class="project-text">
+            Présentation de l'événement sur le
+            <a href="https://www.lerelecqkerhuon.bzh/agenda/ca-coule-de-ressources-green-detective/" target="_blank" rel="noreferrer"
+              >site officiel de la ville</a
+            >.
+          </p>
+          <p class="project-text">
+            Les lauréates du jeu dans
+            <a href="https://www.letelegramme.fr/finistere/relecq-kerhuon-29480/ines-et-jasmine-valette-laureates-du-jeu-green-detective-au-relecq-kerhuon-3819492.php" target="_blank" rel="noreferrer"
+              >Le Télégramme</a
+            >.
+          </p>
+          <p class="project-text">
+            Article sur l'événement dans
+            <a href="https://www.ouest-france.fr/bretagne/le-relecq-kerhuon-29480/decouvrez-et-sensibilisez-vous-aux-gestes-durables-bc1b6cc3-d62c-42ef-85be-2a8528270f90" target="_blank" rel="noreferrer"
+              >Ouest-France</a
+            >.
+          </p>
+        </article>
+
+        <aside class="project-aside">
+          <div class="project-card-info">
+            <h3>Infos</h3>
+            <ul class="project-meta">
+              <li><span>Date</span><span>Juin 2021</span></li>
+              <li><span>Type</span><span>Expérience immersive &amp; Jeu grandeur nature</span></li>
+            </ul>
+            <h3>Outils</h3>
+            <div class="tag-list">
+              <span class="tag">ChatBot</span>
+              <span class="tag">Messenger</span>
+              <span class="tag">Python</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <a href="../../index.html#top" class="logo logo--sm">
+        <span class="logo__bracket">&lt;</span>Erwan Boisard<span class="logo__bracket">/&gt;</span>
+      </a>
+      <p class="site-footer__copy">&copy; <span id="year"></span> Erwan Boisard</p>
+      <a href="#top" class="back-to-top" aria-label="Retour en haut">&uarr;</a>
+    </div>
+  </footer>
+
+  <script src="../../js/main.js"></script>
+</body>
+</html>

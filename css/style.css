@@ -927,6 +927,11 @@ body::before {
   display: block;
 }
 
+.project-figure--phone {
+  max-width: 340px;
+  margin-inline: auto;
+}
+
 .project-figure figcaption {
   padding: 0.8rem 1.1rem;
   font-size: 0.85rem;

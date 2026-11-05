@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Location Photobooth &amp; RetroBooth</title>
+  <meta name="description" content="Location de bornes photo pour vos événements : Photobooth et RetroBooth." />
+  <!-- Page cachée : aucun lien depuis le site et exclue des moteurs de recherche. -->
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon/favicon-16x16.png">
+
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+
+  <header class="site-header" id="site-header">
+    <div class="wrap site-header__inner">
+      <a href="../index.html#top" class="logo" aria-label="Retour à l'accueil">
+        <span class="logo__bracket">&lt;</span>Erwan Boisard<span class="logo__bracket">/&gt;</span>
+      </a>
+
+      <nav class="nav" id="nav" aria-label="Navigation principale">
+        <ul class="nav__list">
+          <li><a href="../index.html#about" class="nav__link">Profil</a></li>
+          <li><a href="../index.html#projects" class="nav__link">Projets</a></li>
+          <li><a href="../index.html#skills" class="nav__link">Compétences</a></li>
+          <li><a href="../index.html#contact" class="nav__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <button class="nav-toggle" id="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Ouvrir le menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="section location-intro" id="top">
+      <div class="wrap">
+        <p class="section-kicker">Location</p>
+        <h1 class="section-title">Une borne photo pour votre événement</h1>
+        <p class="section-lead">
+          Deux machines construites de mes mains, deux ambiances. Choisissez-en une pour découvrir son fonctionnement et ses tarifs.
+        </p>
+
+        <div class="location-choices">
+          <a class="project-card location-choice" href="#photobooth">
+            <div class="project-card__media">
+              <img src="../projets/photobooth/images/thumbnail.jpg" alt="Le Photobooth installé lors d'un événement" />
+            </div>
+            <div class="project-card__body">
+              <h2 class="project-card__title">Photobooth</h2>
+              <p class="project-card__desc">La borne complète : écran tactile, reflex, cadres personnalisés, impressions HD et photos à télécharger.</p>
+              <div class="project-card__footer">
+                <span class="project-card__date">À partir de 75€</span>
+                <span class="project-card__link">Voir le détail <i aria-hidden="true">→</i></span>
+              </div>
+            </div>
+          </a>
+
+          <a class="project-card location-choice" href="#retrobooth">
+            <div class="project-card__media">
+              <img src="../projets/retrobooth/images/thumbnail.jpg" alt="Le RetroBooth et son appareil photo à soufflet" />
+            </div>
+            <div class="project-card__body">
+              <h2 class="project-card__title">RetroBooth</h2>
+              <p class="project-card__desc">Un véritable appareil à soufflet restauré, deux boutons et des tirages instantanés à l'ancienne.</p>
+              <div class="project-card__footer">
+                <span class="project-card__date">50€</span>
+                <span class="project-card__link">Voir le détail <i aria-hidden="true">→</i></span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section project-body location-details" id="location-details" hidden>
+      <div class="wrap project-layout">
+        <div class="project-main">
+
+          <!-- ==================== Photobooth ==================== -->
+          <article class="location-panel" id="photobooth" hidden>
+            <p class="section-kicker">Location</p>
+            <h2 class="section-title">Photobooth</h2>
+
+            <h3 class="project-section-title">Comment ça marche ?</h3>
+            <p class="project-text">
+              Le principe est simple : un écran tactile, un appareil photo et une imprimante.
+            </p>
+            <ol class="location-steps">
+              <li>On choisit un cadre numérique, personnalisé aux couleurs de l'événement.</li>
+              <li>On se prend en photo.</li>
+              <li>On imprime la photo, on la télécharge en scannant un QR code ou on se l'envoie par mail.</li>
+            </ol>
+            <p class="project-text">
+              Plusieurs formats sont possibles : portrait, paysage, carré et même bande multi-photos pour imiter les vieux photomatons.
+            </p>
+
+            <figure class="project-figure">
+              <img src="../projets/photobooth/images/thumbnail.jpg" alt="Le Photobooth installé lors d'un événement, avec un cadre personnalisé et un QR code à l'écran" loading="lazy" />
+            </figure>
+
+            <h3 class="project-section-title">Exemples en images et vidéos</h3>
+            <div class="location-links">
+              <a class="btn btn--ghost" href="https://photos.app.goo.gl/iCqvm4ET1amN3C3f8" target="_blank" rel="noreferrer">Démonstration vidéo ↗</a>
+              <a class="btn btn--ghost" href="https://photos.app.goo.gl/5Hxm56g5gt3MQU4g9" target="_blank" rel="noreferrer">Exemples de cadres numériques ↗</a>
+            </div>
+
+            <h3 class="project-section-title">Tarifs</h3>
+            <div class="pricing-grid">
+              <div class="pricing-card">
+                <h4 class="pricing-card__name">Pack Éco</h4>
+                <p class="pricing-card__price">75€</p>
+                <ul class="location-list">
+                  <li>Personnalisation de l'appli (fond + 2 cadres numériques)</li>
+                  <li>Photos <strong>illimitées</strong> en HD (Canon EOS 250D)</li>
+                  <li>Téléchargement instantané via QR code</li>
+                  <li>Envoi direct par mail</li>
+                  <li>Lien pour récupérer toutes les photos après l'événement</li>
+                </ul>
+              </div>
+              <div class="pricing-card">
+                <h4 class="pricing-card__name">Pack Standard</h4>
+                <p class="pricing-card__price">115€</p>
+                <ul class="location-list">
+                  <li>Tout le Pack Éco</li>
+                  <li><strong>150 impressions</strong> photos</li>
+                </ul>
+              </div>
+              <div class="pricing-card">
+                <h4 class="pricing-card__name">Pack Premium</h4>
+                <p class="pricing-card__price">150€</p>
+                <ul class="location-list">
+                  <li>Tout le Pack Éco</li>
+                  <li><strong>300 impressions</strong> photos</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="project-section-title">Options sur mesure</h3>
+            <ul class="location-list">
+              <li>Cadres numériques supplémentaires</li>
+              <li>Forfait impressions personnalisé (moins de 150 photos)</li>
+              <li>Impression thermique mini-format (style ticket de caisse), en nuances de gris ou bleu, sur papier blanc ou coloré</li>
+            </ul>
+
+            <h3 class="project-section-title">Installation &amp; reprise</h3>
+            <p class="project-text">
+              Selon le lieu et mes disponibilités, je peux m'occuper de l'installation et de la désinstallation.
+            </p>
+
+            <h3 class="project-section-title">À prévoir sur place</h3>
+            <ul class="location-list">
+              <li>Une personne responsable pour allumer le photobooth et recharger les consommables si besoin (si plus de 150 photos uniquement)</li>
+              <li>1 prise électrique + rallonge si nécessaire</li>
+              <li>Une connexion internet (recommandée pour profiter de toutes les options, un partage de connexion mobile suffit)</li>
+            </ul>
+
+            <h3 class="project-section-title">Caution &amp; matériel</h3>
+            <p class="project-text">
+              En cas de casse ou dégradation, une partie de la caution pourra être retenue.
+            </p>
+            <ul class="project-meta location-values">
+              <li><span>Appareil photo + objectif</span><span>550€ + 100€</span></li>
+              <li><span>Mini PC</span><span>250€</span></li>
+              <li><span>Écran tactile</span><span>130€</span></li>
+              <li><span>Imprimante photo</span><span>700€</span></li>
+              <li><span>Pied métallique noir</span><span>60€</span></li>
+              <li><span>Imprimante thermique</span><span>40€</span></li>
+              <li><span>Structure en bois</span><span>30€</span></li>
+              <li><span>Façade plexi</span><span>20€/face</span></li>
+            </ul>
+          </article>
+
+          <!-- ==================== RetroBooth ==================== -->
+          <article class="location-panel" id="retrobooth" hidden>
+            <p class="section-kicker">Location</p>
+            <h2 class="section-title">RetroBooth</h2>
+
+            <h3 class="project-section-title">Comment ça marche ?</h3>
+            <p class="project-text">
+              Le RetroBooth reprend le principe d'une borne photo, dans un véritable appareil à soufflet ancien restauré et monté sur son trépied en bois. Une caméra se cache dans l'objectif et, à l'arrière, on trouve un mini écran, deux boutons et une imprimante thermique.
+            </p>
+            <ol class="location-steps">
+              <li>On se place devant l'objectif : l'écran affiche l'aperçu de la caméra.</li>
+              <li>On appuie sur le bouton photo : un décompte se lance avant la prise de vue.</li>
+              <li>On appuie sur le bouton impression : la photo sort de l'imprimante, et on peut la réimprimer autant de fois qu'on veut.</li>
+            </ol>
+            <p class="project-text">
+              Pas d'écran tactile ni de QR code : sur place, le souvenir se garde sur papier. Les tirages ont un rendu granuleux à l'ancienne, avec le texte de votre choix sous la photo, et vous récupérez toutes les photos en version numérique après l'événement.
+            </p>
+
+            <figure class="project-figure">
+              <img src="../projets/retrobooth/images/prints.jpg" alt="Trois photos imprimées par le RetroBooth avec le texte « Halloween 2026 » : en noir, en bleu et sur papier jaune" loading="lazy" />
+            </figure>
+
+            <div class="location-gallery">
+              <figure class="project-figure">
+                <img src="../projets/retrobooth/images/retrobooth1.jpg" alt="Le RetroBooth monté sur son trépied en bois" loading="lazy" />
+              </figure>
+              <figure class="project-figure">
+                <img src="../projets/retrobooth/images/retrobooth3.jpg" alt="Face arrière du RetroBooth avec l'écran d'aperçu, les boutons photo et impression et l'imprimante thermique" loading="lazy" />
+              </figure>
+              <figure class="project-figure">
+                <img src="../projets/retrobooth/images/retrobooth2.jpg" alt="Une photo en cours d'impression sur l'imprimante thermique du RetroBooth" loading="lazy" />
+              </figure>
+            </div>
+
+            <h3 class="project-section-title">Tarifs</h3>
+            <div class="pricing-grid">
+              <div class="pricing-card">
+                <h4 class="pricing-card__name">Pack Rétro</h4>
+                <p class="pricing-card__price">50€</p>
+                <ul class="location-list">
+                  <li>Texte et petits motifs personnalisés sous les photos</li>
+                  <li>Photos numériques <strong>illimitées</strong>, envoyées après l'événement</li>
+                  <li><strong>2 rouleaux d'impression</strong> (plus de 300 photos environ)</li>
+                  <li>Impression en nuances de gris ou bleu, sur papier blanc ou coloré</li>
+                </ul>
+              </div>
+            </div>
+
+            <h3 class="project-section-title">Installation &amp; reprise</h3>
+            <p class="project-text">
+              Selon le lieu et mes disponibilités, je peux m'occuper de l'installation et de la désinstallation.
+            </p>
+
+            <h3 class="project-section-title">À prévoir sur place</h3>
+            <ul class="location-list">
+              <li>Une prise + rallonge si nécessaire</li>
+              <li>Aucune connexion internet n'est nécessaire</li>
+            </ul>
+
+            <h3 class="project-section-title">Caution &amp; matériel</h3>
+            <p class="project-text">
+              En cas de casse ou dégradation, une partie de la caution pourra être retenue.
+            </p>
+            <ul class="project-meta location-values">
+              <li><span>Appareil à soufflet ancien restauré</span><span>150€</span></li>
+              <li><span>Trépied en bois</span><span>60€</span></li>
+              <li><span>Raspberry Pi</span><span>60€</span></li>
+              <li><span>Mini écran</span><span>30€</span></li>
+              <li><span>Webcam</span><span>40€</span></li>
+              <li><span>Imprimante thermique</span><span>40€</span></li>
+            </ul>
+          </article>
+        </div>
+
+        <aside class="project-aside">
+          <div class="project-card-info">
+            <h3>Réserver</h3>
+            <p class="location-contact-text">N'hésitez pas si vous avez des questions ou des demandes particulières !</p>
+            <a href="../index.html#contact" class="btn btn--primary btn--block">Me contacter</a>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap site-footer__inner">
+      <a href="../index.html#top" class="logo logo--sm">
+        <span class="logo__bracket">&lt;</span>Erwan Boisard<span class="logo__bracket">/&gt;</span>
+      </a>
+      <p class="site-footer__copy">&copy; <span id="year"></span> Erwan Boisard</p>
+      <a href="#top" class="back-to-top" aria-label="Retour en haut">&uarr;</a>
+    </div>
+  </footer>
+
+  <script src="../js/main.js"></script>
+</body>
+</html>

@@ -164,6 +164,33 @@
     });
   }
 
+  /* ---------------- Location : détail de la machine choisie ---------------- */
+  const rentalDetails = document.getElementById('location-details');
+
+  if (rentalDetails) {
+    const panels = Array.from(rentalDetails.querySelectorAll('.location-panel'));
+    const choices = document.querySelectorAll('.location-choice');
+
+    const showRental = () => {
+      const { hash } = window.location;
+      const target = panels.find((panel) => `#${panel.id}` === hash);
+      if (!target) return; // ex. #top : on garde la machine affichée
+
+      rentalDetails.hidden = false;
+      panels.forEach((panel) => {
+        panel.hidden = panel !== target;
+      });
+      choices.forEach((choice) => {
+        if (choice.getAttribute('href') === hash) choice.setAttribute('aria-current', 'true');
+        else choice.removeAttribute('aria-current');
+      });
+      target.scrollIntoView();
+    };
+
+    window.addEventListener('hashchange', showRental);
+    showRental();
+  }
+
   /* ---------------- Lightbox (project images) ---------------- */
   const lightboxImages = Array.from(document.querySelectorAll('.project-main img'));
 
@@ -190,25 +217,28 @@
     const lbClose = lightbox.querySelector('.lightbox__close');
     const lbPrev = lightbox.querySelector('.lightbox__nav--prev');
     const lbNext = lightbox.querySelector('.lightbox__nav--next');
-    const multiple = lightboxImages.length > 1;
+    let gallery = lightboxImages;
+    let multiple = false;
     let current = 0;
     let lastFocused = null;
 
-    lbPrev.hidden = !multiple;
-    lbNext.hidden = !multiple;
-
     const show = (index) => {
-      current = (index + lightboxImages.length) % lightboxImages.length;
-      const source = lightboxImages[current];
+      current = (index + gallery.length) % gallery.length;
+      const source = gallery[current];
       lbImg.src = source.currentSrc || source.src;
       lbImg.alt = source.alt;
-      const counter = multiple ? `${current + 1} / ${lightboxImages.length}` : '';
+      const counter = multiple ? `${current + 1} / ${gallery.length}` : '';
       lbCaption.textContent = [counter, source.alt].filter(Boolean).join(' · ');
     };
 
-    const open = (index) => {
+    const open = (image) => {
       lastFocused = document.activeElement;
-      show(index);
+      // Seules les images visibles : la page location masque la machine non choisie.
+      gallery = lightboxImages.filter((img) => img.offsetParent !== null);
+      multiple = gallery.length > 1;
+      lbPrev.hidden = !multiple;
+      lbNext.hidden = !multiple;
+      show(gallery.indexOf(image));
       lightbox.hidden = false;
       document.body.classList.add('has-lightbox');
       requestAnimationFrame(() => lightbox.classList.add('is-open'));
@@ -222,15 +252,15 @@
       if (lastFocused) lastFocused.focus();
     };
 
-    lightboxImages.forEach((img, index) => {
+    lightboxImages.forEach((img) => {
       img.classList.add('is-zoomable');
       img.setAttribute('tabindex', '0');
       img.setAttribute('role', 'button');
-      img.addEventListener('click', () => open(index));
+      img.addEventListener('click', () => open(img));
       img.addEventListener('keydown', (event) => {
         if (event.key === 'Enter' || event.key === ' ') {
           event.preventDefault();
-          open(index);
+          open(img);
         }
       });
     });
